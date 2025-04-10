@@ -5,3 +5,4 @@ const resetButton = document.getElementById('reset');
 
 let currentPlayer = 'X';
 let gameActive = true;
+let gameState = ['', '', '', '', '', '', '', '', ''];
