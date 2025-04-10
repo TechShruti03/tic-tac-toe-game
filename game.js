@@ -17,3 +17,23 @@ const winningConditions = [
     [0, 4, 8],
     [2, 4, 6]
 ];
+
+function handleCellClick(event) {
+    const clickedCell = event.target;
+    const clickedCellIndex = parseInt(clickedCell.getAttribute('data-index'));
+
+    if (gameState[clickedCellIndex] !== '' || !gameActive) {
+        return;
+    }
+
+    gameState[clickedCellIndex] = currentPlayer;
+    clickedCell.textContent = currentPlayer;
+
+    if (currentPlayer === 'X') {
+        clickedCell.style.backgroundColor = 'red';
+    } else {
+        clickedCell.style.backgroundColor = 'blue';
+    }
+
+    checkResult();
+}
