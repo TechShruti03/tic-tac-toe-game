@@ -66,3 +66,17 @@ function checkResult() {
 
     currentPlayer = currentPlayer === 'X' ? 'O' : 'X';
 }
+
+function resetGame() {
+    gameActive = true;
+    currentPlayer = 'X';
+    gameState = ['', '', '', '', '', '', '', '', ''];
+    message.textContent = '';
+    cells.forEach(cell => {
+        cell.textContent = '';
+        cell.style.backgroundColor = '#fff';
+    });
+}
+
+cells.forEach(cell => cell.addEventListener('click', handleCellClick));
+resetButton.addEventListener('click', resetGame);
