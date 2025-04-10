@@ -37,3 +37,32 @@ function handleCellClick(event) {
 
     checkResult();
 }
+
+function checkResult() {
+    let roundWon = false;
+
+    for (let i = 0; i < winningConditions.length; i++) {
+        const [a, b, c] = winningConditions[i];
+        if (gameState[a] === '' || gameState[b] === '' || gameState[c] === '') {
+            continue;
+        }
+        if (gameState[a] === gameState[b] && gameState[a] === gameState[c]) {
+            roundWon = true;
+            break;
+        }
+    }
+
+    if (roundWon) {
+        message.textContent = `Player ${currentPlayer === 'X' ? '1' : '2'} wins!`;
+        gameActive = false;
+        return;
+    }
+
+    if (!gameState.includes('')) {
+        message.textContent = 'It\'s a draw!';
+        gameActive = false;
+        return;
+    }
+
+    currentPlayer = currentPlayer === 'X' ? 'O' : 'X';
+}
