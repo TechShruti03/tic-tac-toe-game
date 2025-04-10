@@ -21,3 +21,13 @@ h1 {
     margin-bottom: 20px;
     color: #333;
 }
+.board {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    gap: 5px;
+    margin: 20px auto;
+    width: 100%;
+    max-width: 300px;
+    aspect-ratio: 1; 
+}
