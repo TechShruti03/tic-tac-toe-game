@@ -64,3 +64,16 @@ h1 {
 #reset:hover {
     background-color: #0056b3;
 }
+@media (max-width: 600px) {
+    .cell {
+        font-size: 2.5em;
+    }
+
+    h1 {
+        font-size: 1.5em;
+    }
+
+    #message {
+        font-size: 1.2em; 
+    }
+}
