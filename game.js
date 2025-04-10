@@ -4,3 +4,4 @@ const message = document.getElementById('message');
 const resetButton = document.getElementById('reset');
 
 let currentPlayer = 'X';
+let gameActive = true;
